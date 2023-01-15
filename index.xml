@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mizayev Farid</title>
+    <link>https://mirzayevio.github.io/</link>
+    <description>Recent content on Mizayev Farid</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jan 2023 15:16:14 +0400</lastBuildDate><atom:link href="https://mirzayevio.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fedora post install guide</title>
+      <link>https://mirzayevio.github.io/posts/first/</link>
+      <pubDate>Sun, 15 Jan 2023 15:16:14 +0400</pubDate>
+      
+      <guid>https://mirzayevio.github.io/posts/first/</guid>
+      <description>This is a test content
+ def factorial(x):  &amp;#34;&amp;#34;&amp;#34;This is a recursive function to find the factorial of an integer&amp;#34;&amp;#34;&amp;#34;   if x == 1:  return 1  else:  # recursive call to the function  return (x * factorial(x-1)) </description>
+    </item>
+    
+  </channel>
+</rss>
