@@ -6,6 +6,11 @@
    content: "";
 }
 
+.article-read-time::before{ 
+   content: "|";
+   margin-right: 0.5rem;
+}
+
 article header .meta {
     margin-top: 0.4rem;
 }
