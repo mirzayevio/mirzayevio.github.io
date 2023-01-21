@@ -2,6 +2,15 @@
     margin-top: 0.4rem;
 }
 
-.article-tag::before{ 
-   content: ""
+.article-tag::before, .article-category::before{ 
+   content: "";
+}
+
+article header .meta {
+    margin-top: 0.4rem;
+}
+
+.article-tag{
+    display: block;
+    margin-bottom: 0.4rem;
 }
