@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on Mizayev Farid</title>
-    <link>https://mirzayevio.github.io/categories/</link>
-    <description>Recent content in Categories on Mizayev Farid</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://mirzayevio.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Mizayev Farid</title><link>https://mirzayevio.github.io/categories/</link><description>Recent content in Categories on Mizayev Farid</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 15 Jan 2023 15:16:14 +0400</lastBuildDate><atom:link href="https://mirzayevio.github.io/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>development</title><link>https://mirzayevio.github.io/categories/development/</link><pubDate>Sun, 15 Jan 2023 15:16:14 +0400</pubDate><guid>https://mirzayevio.github.io/categories/development/</guid><description/></item><item><title>publishing</title><link>https://mirzayevio.github.io/categories/publishing/</link><pubDate>Sun, 15 Jan 2023 15:16:14 +0400</pubDate><guid>https://mirzayevio.github.io/categories/publishing/</guid><description/></item></channel></rss>

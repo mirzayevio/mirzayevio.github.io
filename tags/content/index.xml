@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>content on Mizayev Farid</title><link>https://mirzayevio.github.io/tags/content/</link><description>Recent content in content on Mizayev Farid</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 15 Jan 2023 15:16:14 +0400</lastBuildDate><atom:link href="https://mirzayevio.github.io/tags/content/index.xml" rel="self" type="application/rss+xml"/><item><title>Fedora post install guide</title><link>https://mirzayevio.github.io/posts/first/</link><pubDate>Sun, 15 Jan 2023 15:16:14 +0400</pubDate><guid>https://mirzayevio.github.io/posts/first/</guid><description>This is a test content
+def factorial(x): &amp;#34;&amp;#34;&amp;#34;This is a recursive function to find the factorial of an integer&amp;#34;&amp;#34;&amp;#34; if x == 1: return 1 else: # recursive call to the function return (x * factorial(x-1)) What you’ll learn here:
+What a taxonomy is
+How to configure taxonomies
+How to use taxonomies to navigate your site’s categories and tags
+Terminal copied
+Starting repo git clone https://github.com/CloudCannon/hugo-learn-blog-template.git
+Starting branch: git checkout taxonomies-intro-start</description></item></channel></rss>
