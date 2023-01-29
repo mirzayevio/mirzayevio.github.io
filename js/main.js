@@ -52,32 +52,6 @@ $(document).ready(function() {
     });
 
     /**
-     * Add a scroll listener to the menu to hide/show the navigation links.
-     */
-    if (menu.length) {
-      $(window).on("scroll", function() {
-        var topDistance = menu.offset().top;
-
-        // hide only the navigation links on desktop
-        if (!nav.is(":visible") && topDistance < 50) {
-          nav.show();
-        } else if (nav.is(":visible") && topDistance > 100) {
-          nav.hide();
-        }
-
-        // on tablet, hide the navigation icon as well and show a "scroll to top
-        // icon" instead
-        if ( ! $( "#menu-icon" ).is(":visible") && topDistance < 50 ) {
-          $("#menu-icon-tablet").show();
-          $("#top-icon-tablet").hide();
-        } else if (! $( "#menu-icon" ).is(":visible") && topDistance > 100) {
-          $("#menu-icon-tablet").hide();
-          $("#top-icon-tablet").show();
-        }
-      });
-    }
-
-    /**
      * Show mobile navigation menu after scrolling upwards,
      * hide it again after scrolling downwards.
      */
