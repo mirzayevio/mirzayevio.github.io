@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Week System Design Study Schedule</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .preview {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 4px 0;
+        }
+        .week-header {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>12-Week System Design Study Schedule</h1>
+       
+        
+        <div class="preview">
+            <table id="scheduleTable">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Week</th>
+                        <th style="width: 30%;">SDP Sections</th>
+                        <th style="width: 25%;">DDIA Chapters</th>
+                        <th style="width: 30%;">Practice Tasks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="week-header">Week 1–2:<br>Networking & Foundations</td>
+                        <td>
+                            • Client–Server model<br>
+                            • IP/TCP, DNS, Latency/Throughput<br>
+                            • HTTP/HTTPS<br>
+                            • Proxy vs Reverse Proxy
+                        </td>
+                        <td>Intro + Chapter 1 (Reliable, Scalable, Maintainable Systems)</td>
+                        <td>
+                            • Explain how a browser loads a page (DNS → TCP/IP → HTTP)<br>
+                            • Compare latency vs throughput with real-world examples
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="week-header">Week 3:<br>APIs & Communication</td>
+                        <td>
+                            • APIs, REST vs GraphQL vs gRPC<br>
+                            • WebSockets, Webhooks
+                        </td>
+                        <td>None (practice-heavy)</td>
+                        <td>
+                            • Design REST + WebSocket APIs for a chat app<br>
+                            • Compare REST vs gRPC in microservices
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="week-header">Week 4–5:<br>Databases & Storage</td>
+                        <td>
+                            • SQL vs NoSQL<br>
+                            • ACID vs BASE<br>
+                            • Indexing<br>
+                            • Replication<br>
+                            • Sharding, Partitioning<br>
+                            • Denormalization
+                        </td>
+                        <td>
+                            • Ch. 2 (Data Models & Query Languages)<br>
+                            • Ch. 3 (Storage & Retrieval)<br>
+                            • Ch. 5 (Replication)<br>
+                            • Ch. 6 (Partitioning)
+                        </td>
+                        <td>
+                            • Design schema for an e-commerce system<br>
+                            • Compare MySQL vs Cassandra for storing user sessions
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="week-header">Week 6:<br>Scalability & Load Management</td>
+                        <td>
+                            • Vertical vs Horizontal Scaling<br>
+                            • Load Balancers<br>
+                            • Caching (client, CDN, DB-level)<br>
+                            • CDN deep dive
+                        </td>
+                        <td>Ch. 4 (Encoding & Evolution, skim), Ch. 10 (Batch Processing — optional)</td>
+                        <td>
+                            • Cache strategy for Netflix thumbnails<br>
+                            • Explain CDN usage in video streaming
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="week-header">Week 7:<br>Distributed Systems Principles</td>
+                        <td>
+                            • CAP Theorem, PACELC<br>
+                            • Consistency models<br>
+                            • Leader election (Raft basics)<br>
+                            • Idempotency, retries, fault tolerance
+                        </td>
+                        <td>
+                            • Ch. 7 (Transactions)<br>
+                            • Ch. 8 (Distributed Systems)<br>
+                            • Ch. 9 (Consistency & Consensus)
+                        </td>
+                        <td>
+                            • Trade-offs: Global banking system (strong vs eventual consistency)<br>
+                            • Discuss quorum reads/writes in Cassandra
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="week-header">Week 8:<br>Asynchronous Processing</td>
+                        <td>
+                            • Message queues (Kafka, RabbitMQ, SQS)<br>
+                            • Stream processing basics<br>
+                            • Event sourcing & CQRS intro
+                        </td>
+                        <td>Ch. 11 (Stream Processing)</td>
+                        <td>
+                            • Design a logging system for billions of events/day<br>
+                            • Compare batch vs stream architectures
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="week-header">Week 9:<br>Microservices & Architecture Patterns</td>
+                        <td>
+                            • Monolith vs Microservices<br>
+                            • API Gateways<br>
+                            • Service discovery, service mesh basics<br>
+                            • Rate limiting, circuit breakers
+                        </td>
+                        <td>Ch. 12 (Future of Data Systems) — optional</td>
+                        <td>
+                            • Design an API Gateway for Uber<br>
+                            • Explain how rate limiting is enforced in APIs
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="week-header">Week 10–11:<br>Applied System Design Problems</td>
+                        <td>
+                            <strong>Pick 2–3 problems each week:</strong><br>
+                            • URL Shortener<br>
+                            • Rate Limiter<br>
+                            • Twitter/FB News Feed<br>
+                            • WhatsApp/Slack Messaging<br>
+                            • Dropbox/Google Drive<br>
+                            • Uber/Lyft Ride Hailing
+                        </td>
+                        <td>System design interview questions with solutions (SDP)</td>
+                        <td>
+                            <strong>Practice Framework:</strong><br>
+                            1. Clarify requirements<br>
+                            2. APIs & data models<br>
+                            3. High-level design diagram<br>
+                            4. Deep dive into core components (DB, cache, LB, MQ)<br>
+                            5. Identify bottlenecks + scaling
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="week-header">Week 12:<br>Mock Interviews & Review</td>
+                        <td>
+                            Review flashcards + case studies
+                        </td>
+                        <td>Revisit key chapters (2, 5, 6, 7, 8, 9)</td>
+                        <td>
+                            • Do 3–4 timed mock interviews (Pramp, peers, Interviewing.io)<br>
+                            • Create one-page cheat sheets:<br>
+                            &nbsp;&nbsp;- Caching strategies<br>
+                            &nbsp;&nbsp;- DB scaling (replication/sharding)<br>
+                            &nbsp;&nbsp;- Consistency models<br>
+                            &nbsp;&nbsp;- Queues vs Streams
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="margin-top: 40px;">
+                <h2 style="color: #e67e22; border-bottom: 3px solid #e67e22; padding-bottom: 10px;">🔧 Suggested Improvements & Missing Topics</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Week</th>
+                            <th style="width: 35%;">Missing Topics to Add</th>
+                            <th style="width: 50%;">Additional Practice/Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="week-header">Week 1–2:<br>Networking & Foundations</td>
+                            <td>
+                                <strong>Security Basics:</strong><br>
+                                • HTTPS/TLS handshake details<br>
+                                • Authentication vs Authorization<br>
+                                • JWT, OAuth, sessions<br>
+                                • CORS (Cross-Origin Resource Sharing)
+                            </td>
+                            <td>
+                                • Practice: Explain JWT flow vs session-based auth<br>
+                                • Draw TLS handshake diagram<br>
+                                • Explain when to use OAuth vs sessions
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">Week 3:<br>APIs & Communication</td>
+                            <td>
+                                <strong>API Design Patterns:</strong><br>
+                                • API versioning strategies<br>
+                                • Backward compatibility<br>
+                                • Long polling vs SSE vs WebSockets comparison<br>
+                                <br>
+                                <strong>DDIA Addition:</strong><br>
+                                • Make Ch. 4 (Encoding & Evolution) MANDATORY
+                            </td>
+                            <td>
+                                • Practice: Design API versioning strategy for a public API<br>
+                                • Compare real-time communication methods with use cases<br>
+                                • Read DDIA Ch. 4 fully (don't skip)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">Week 4–5:<br>Databases & Storage</td>
+                            <td>
+                                <strong>Database Selection:</strong><br>
+                                • Decision framework: SQL vs NoSQL types<br>
+                                • Document (MongoDB), Column-family (Cassandra),<br>
+                                &nbsp;&nbsp;Key-Value (Redis), Graph (Neo4j)<br>
+                                • Connection pooling<br>
+                                • Object storage (S3) vs Block storage<br>
+                                • Distributed file systems (HDFS basics)
+                            </td>
+                            <td>
+                                • Practice: Create decision tree for DB selection<br>
+                                • Explain connection pooling and why it matters<br>
+                                • Compare when to use Redis vs Memcached<br>
+                                • Design storage strategy for media files
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">Week 6:<br>Scalability & Load Management</td>
+                            <td>
+                                <strong>Observability & Monitoring:</strong><br>
+                                • Metrics, logging, distributed tracing<br>
+                                • Health checks & readiness probes<br>
+                                • SLIs, SLOs, SLAs basics<br>
+                                <br>
+                                <strong>Advanced Caching:</strong><br>
+                                • Cache eviction policies (LRU, LFU, FIFO)<br>
+                                • Cache stampede and solutions<br>
+                                • Write-through vs Write-back vs Write-around
+                            </td>
+                            <td>
+                                • Practice: Design monitoring for a microservices system<br>
+                                • Explain the difference between metrics, logs, and traces<br>
+                                • Solve cache stampede problem<br>
+                                • Compare caching strategies for different scenarios
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">Week 7:<br>Distributed Systems Principles</td>
+                            <td>
+                                <strong>Time & Clocks:</strong><br>
+                                • Vector clocks & Lamport timestamps<br>
+                                • Clock synchronization (NTP, clock skew)<br>
+                                <br>
+                                <strong>Distributed Transactions:</strong><br>
+                                • Two-Phase Commit (2PC)<br>
+                                • Saga pattern<br>
+                                • Three-Phase Commit (3PC)
+                            </td>
+                            <td>
+                                • Practice: Explain why time is hard in distributed systems<br>
+                                • Compare 2PC vs Saga pattern with examples<br>
+                                • Design distributed transaction for e-commerce order<br>
+                                • Discuss trade-offs of different consistency models
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">Week 8:<br>Asynchronous Processing</td>
+                            <td>
+                                <strong>Message Delivery Guarantees:</strong><br>
+                                • At-least-once vs exactly-once vs at-most-once<br>
+                                • Dead Letter Queues (DLQ)<br>
+                                • Message ordering guarantees<br>
+                                • Backpressure handling<br>
+                                • Idempotency keys<br>
+                                <br>
+                                <strong>Data Pipelines:</strong><br>
+                                • Lambda architecture (batch + stream)<br>
+                                • ETL/ELT basics
+                            </td>
+                            <td>
+                                • Practice: Design retry mechanism with DLQ<br>
+                                • Explain trade-offs: at-least-once vs exactly-once<br>
+                                • Design payment processing system with idempotency<br>
+                                • Compare Kafka vs RabbitMQ vs SQS
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">Week 9:<br>Microservices & Architecture Patterns</td>
+                            <td>
+                                <strong>Additional Patterns:</strong><br>
+                                • Saga pattern (already in Week 7, reinforce here)<br>
+                                • Strangler Fig pattern (migration)<br>
+                                • Bulkhead pattern (isolation)<br>
+                                • Sidecar pattern<br>
+                                • Ambassador pattern<br>
+                                <br>
+                                <strong>Deployment:</strong><br>
+                                • Blue-green deployment<br>
+                                • Canary releases<br>
+                                • Rolling deployments
+                            </td>
+                            <td>
+                                • Practice: Design migration from monolith to microservices<br>
+                                • Explain bulkhead pattern with examples<br>
+                                • Compare deployment strategies<br>
+                                • Design rollback strategy for failed deployments
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">NEW Week 9.5:<br>Security, Observability & Reliability</td>
+                            <td>
+                                <strong>Security Deep Dive:</strong><br>
+                                • DDoS protection strategies<br>
+                                • SQL injection, XSS, CSRF prevention<br>
+                                • Encryption at rest vs in transit<br>
+                                • Rate limiting strategies (token bucket, leaky bucket)<br>
+                                <br>
+                                <strong>Reliability Patterns:</strong><br>
+                                • Retry strategies with exponential backoff<br>
+                                • Jitter in distributed systems<br>
+                                • Chaos engineering basics<br>
+                                • Disaster recovery (RPO/RTO, backup strategies)
+                            </td>
+                            <td>
+                                • Practice: Design secure authentication system<br>
+                                • Implement rate limiting algorithm<br>
+                                • Design disaster recovery plan<br>
+                                • Explain how to prevent common attacks<br>
+                                • Design system that survives datacenter failure
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">Week 10–11:<br>Applied System Design Problems</td>
+                            <td>
+                                <strong>Add Modern Problems:</strong><br>
+                                • YouTube/Netflix (video streaming at scale)<br>
+                                • Instagram (image storage & feed)<br>
+                                • Notification system (push notifications)<br>
+                                • Search autocomplete (type-ahead)<br>
+                                • Distributed counter (likes/views at scale)<br>
+                                • Top K problem (trending hashtags, leaderboards)<br>
+                                • Design TinyURL with analytics<br>
+                                • WebRTC-based video calling system
+                            </td>
+                            <td>
+                                <strong>Enhanced Framework:</strong><br>
+                                1. Clarify requirements (functional & non-functional)<br>
+                                2. Capacity estimation (traffic, storage, bandwidth)<br>
+                                3. APIs & data models<br>
+                                4. High-level design diagram<br>
+                                5. Deep dive into core components<br>
+                                6. Identify bottlenecks + scaling<br>
+                                7. Security considerations<br>
+                                8. Monitoring & observability
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="week-header">Week 12:<br>Mock Interviews & Review</td>
+                            <td>
+                                <strong>Additional Cheat Sheets:</strong><br>
+                                • Common system design pitfalls<br>
+                                • Numbers every engineer should know<br>
+                                • CAP theorem quick reference<br>
+                                • Load balancer algorithms comparison<br>
+                                • Database comparison matrix
+                            </td>
+                            <td>
+                                • Practice: 3–4 timed mock interviews<br>
+                                • Review all DDIA chapters (2, 4, 5, 6, 7, 8, 9, 11)<br>
+                                • Create comprehensive cheat sheets<br>
+                                • Practice explaining concepts in simple terms<br>
+                                • Record yourself and review communication
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            
+            // Title
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text('12-Week System Design Study Schedule', 105, 15, { align: 'center' });
+            
+            // Table data
+            const tableData = [
+                ['Week 1–2:\nNetworking &\nFoundations', 
+                 '• Client–Server model\n• IP/TCP, DNS, Latency/Throughput\n• HTTP/HTTPS\n• Proxy vs Reverse Proxy',
+                 'Intro + Chapter 1\n(Reliable, Scalable,\nMaintainable Systems)',
+                 '• Explain how a browser loads a page\n  (DNS → TCP/IP → HTTP)\n• Compare latency vs throughput with\n  real-world examples'],
+                
+                ['Week 3:\nAPIs &\nCommunication',
+                 '• APIs, REST vs GraphQL vs gRPC\n• WebSockets, Webhooks',
+                 'None\n(practice-heavy)',
+                 '• Design REST + WebSocket APIs for\n  a chat app\n• Compare REST vs gRPC in microservices'],
+                
+                ['Week 4–5:\nDatabases &\nStorage',
+                 '• SQL vs NoSQL\n• ACID vs BASE\n• Indexing\n• Replication\n• Sharding, Partitioning\n• Denormalization',
+                 '• Ch. 2 (Data Models)\n• Ch. 3 (Storage & Retrieval)\n• Ch. 5 (Replication)\n• Ch. 6 (Partitioning)',
+                 '• Design schema for an e-commerce\n  system\n• Compare MySQL vs Cassandra for\n  storing user sessions'],
+                
+                ['Week 6:\nScalability &\nLoad Management',
+                 '• Vertical vs Horizontal Scaling\n• Load Balancers\n• Caching (client, CDN, DB-level)\n• CDN deep dive',
+                 'Ch. 4 (Encoding, skim)\nCh. 10 (Batch Processing\n— optional)',
+                 '• Cache strategy for Netflix thumbnails\n• Explain CDN usage in video streaming'],
+                
+                ['Week 7:\nDistributed Systems\nPrinciples',
+                 '• CAP Theorem, PACELC\n• Consistency models\n• Leader election (Raft basics)\n• Idempotency, retries, fault tolerance',
+                 '• Ch. 7 (Transactions)\n• Ch. 8 (Distributed Systems)\n• Ch. 9 (Consistency &\n  Consensus)',
+                 '• Trade-offs: Global banking system\n  (strong vs eventual consistency)\n• Discuss quorum reads/writes in\n  Cassandra'],
+                
+                ['Week 8:\nAsynchronous\nProcessing',
+                 '• Message queues (Kafka, RabbitMQ, SQS)\n• Stream processing basics\n• Event sourcing & CQRS intro',
+                 'Ch. 11\n(Stream Processing)',
+                 '• Design a logging system for billions\n  of events/day\n• Compare batch vs stream architectures'],
+                
+                ['Week 9:\nMicroservices &\nArchitecture Patterns',
+                 '• Monolith vs Microservices\n• API Gateways\n• Service discovery, service mesh\n• Rate limiting, circuit breakers',
+                 'Ch. 12 (Future of Data\nSystems) — optional',
+                 '• Design an API Gateway for Uber\n• Explain how rate limiting is enforced\n  in APIs'],
+                
+                ['Week 10–11:\nApplied System\nDesign Problems',
+                 'Pick 2–3 problems each week:\n• URL Shortener\n• Rate Limiter\n• Twitter/FB News Feed\n• WhatsApp/Slack Messaging\n• Dropbox/Google Drive\n• Uber/Lyft Ride Hailing',
+                 'System design interview\nquestions with solutions\n(SDP)',
+                 'Practice Framework:\n1. Clarify requirements\n2. APIs & data models\n3. High-level design diagram\n4. Deep dive into core components\n5. Identify bottlenecks + scaling'],
+                
+                ['Week 12:\nMock Interviews\n& Review',
+                 'Review flashcards + case studies',
+                 'Revisit key chapters:\n2, 5, 6, 7, 8, 9',
+                 '• Do 3–4 timed mock interviews\n• Create one-page cheat sheets:\n  - Caching strategies\n  - DB scaling (replication/sharding)\n  - Consistency models\n  - Queues vs Streams']
+            ];
+            
+            // Generate table
+            doc.autoTable({
+                startY: 25,
+                head: [['Week', 'SDP Sections', 'DDIA Chapters', 'Practice Tasks']],
+                body: tableData,
+                theme: 'grid',
+                styles: {
+                    fontSize: 8,
+                    cellPadding: 3,
+                    valign: 'top',
+                    lineColor: [200, 200, 200],
+                    lineWidth: 0.1
+                },
+                headStyles: {
+                    fillColor: [52, 152, 219],
+                    textColor: [255, 255, 255],
+                    fontStyle: 'bold',
+                    halign: 'center'
+                },
+                columnStyles: {
+                    0: { cellWidth: 30, fontStyle: 'bold' },
+                    1: { cellWidth: 50 },
+                    2: { cellWidth: 45 },
+                    3: { cellWidth: 55 }
+                },
+                margin: { top: 25, left: 10, right: 10 },
+                didDrawPage: function(data) {
+                    // Footer
+                    doc.setFontSize(8);
+                    doc.setTextColor(128);
+                    doc.text('12-Week System Design Study Schedule', 105, 290, { align: 'center' });
+                }
+            });
+            
+            // Add summary box on new page
+            doc.addPage();
+            doc.setFontSize(14);
+            doc.setFont(undefined, 'bold');
+            doc.setTextColor(46, 125, 50);
+            doc.text('✓ After 12 weeks, you\'ll have:', 20, 20);
+            
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            doc.setTextColor(0, 0, 0);
+            const summaryPoints = [
+                '• Covered all theory topics (your list + SDP coverage)',
+                '• Read the core DDIA chapters',
+                '• Practiced 8–10 real design problems',
+                '• Built confidence in structured interview answers'
+            ];
+            
+            let y = 35;
+            summaryPoints.forEach(point => {
+                doc.text(point, 25, y);
+                y += 10;
+            });
+            
+            // Save PDF
+            doc.save('12-Week-System-Design-Study-Schedule.pdf');
+        }
+    </script>
+</body>
+</html>
