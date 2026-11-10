@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Writing | {{ SITENAME }}{% endblock %}
+{% block canonical %}{{ SITEURL }}/posts/{% endblock %}
+{% block content %}
+<section class="prose-page">
+  <h1>Writing</h1>
+  <div class="archive-list">
+    {% for article in articles %}
+    <article class="entry">
+      <p class="metadata"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></p>
+      <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} ↗</a></h2>
+      {% if article.summary %}<div class="entry-summary">{{ article.summary }}</div>{% endif %}
+    </article>
+    {% else %}
+    <p>There are no published articles yet. Read about the <a href="{{ SITEURL }}/projects/">profiling talk</a> in the meantime.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

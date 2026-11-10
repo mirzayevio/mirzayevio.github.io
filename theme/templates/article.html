@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.summary|striptags }}{% endblock %}
+{% block canonical %}{{ SITEURL }}/{{ article.url }}{% endblock %}
+{% block content %}
+<article class="prose-page">
+  <h1>{{ article.title }}</h1>
+  <p class="metadata"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></p>
+  <div class="prose">{{ article.content }}</div>
+</article>
+{% endblock %}

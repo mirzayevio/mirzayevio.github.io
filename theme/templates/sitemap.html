@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ SITEURL }}/</loc></url>
+  <url><loc>{{ SITEURL }}/posts/</loc></url>
+  {% for page in pages %}<url><loc>{{ SITEURL }}/{{ page.url }}</loc></url>
+  {% endfor %}
+  {% for article in articles %}<url><loc>{{ SITEURL }}/{{ article.url }}</loc><lastmod>{{ article.date.strftime('%Y-%m-%d') }}</lastmod></url>
+  {% endfor %}
+</urlset>
