@@ -29,8 +29,8 @@ python -m unittest discover -s tests -v
 
 The workflow builds pull requests without deploying. Pushes to `main` build and deploy via the GitHub Pages Actions artifact; no cross-repository deploy key is required.
 
-**Before merging this migration**, in repository **Settings → Pages**, change **Build and deployment → Source** from “Deploy from a branch” to **GitHub Actions**. Confirm that GitHub Actions and the `github-pages` environment are available. Then merge the branch and check the “Build and deploy site” workflow and the live site. The previous generated files remain in the repository as a transition fallback, but are not the source for the new build.
+GitHub Pages is configured to deploy the Pelican build through GitHub Actions. Generated output stays in the ignored `output/` directory locally; GitHub Actions uploads it as a Pages artifact. The repository contains Pelican source, not a checked-in copy of the generated site.
 
-The old workflow in `mirzayevio/blog` also publishes to this repository. Disable it or revoke its deploy key before making further changes there, so it cannot overwrite the new source or site. Verify the new deployment before retiring the old setup.
+The legacy Hugo publisher in `mirzayevio/blog` has been disabled. Do not re-enable it; its deploy key must not be used to publish here.
 
 The current resume is carried over from the old site and may be outdated. Confirm employment, contact details, and public personal information before publishing an updated version. The supplied conference slides are not included; add them only when ready to publish.

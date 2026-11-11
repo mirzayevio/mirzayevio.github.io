@@ -1,16 +1,36 @@
-import unittest
-import xml.etree.ElementTree as ET
-from pathlib import Path
 import shutil
 import subprocess
 import sys
 import tempfile
+import unittest
+import xml.etree.ElementTree as ET
+from pathlib import Path
 
 
 OUTPUT = Path("output")
 
 
 class SiteTests(unittest.TestCase):
+    def test_legacy_generated_site_is_not_in_source_root(self):
+        for path in (
+            ".nojekyll",
+            "about",
+            "bookmarks",
+            "categories",
+            "css",
+            "images",
+            "index.html",
+            "index.xml",
+            "js",
+            "lib",
+            "posts",
+            "resume",
+            "sitemap.xml",
+            "tags",
+        ):
+            with self.subTest(path=path):
+                self.assertFalse(Path(path).exists())
+
     def test_required_pages_exist(self):
         for path in (
             "index.html",
