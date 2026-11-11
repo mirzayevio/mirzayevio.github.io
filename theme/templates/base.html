@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ SITEDESCRIPTION }}{% endblock %}">
+  <link rel="canonical" href="{% block canonical %}{{ SITEURL }}/{% endblock %}">
+  <link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} RSS" href="{{ SITEURL }}/index.xml">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/site.css">
+  <link rel="icon" href="{{ SITEURL }}/images/favicon.ico">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="site-header">
+      <a class="brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+      <nav aria-label="Main navigation">
+        <a href="{{ SITEURL }}/posts/">Writing</a>
+        <a href="{{ SITEURL }}/projects/">Work &amp; talks</a>
+        <a href="{{ SITEURL }}/about/">About</a>
+        <a href="{{ SITEURL }}/resume/">Resume</a>
+      </nav>
+    </header>
+    <main id="main">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      <div>
+        <div class="footer-name">{{ SITENAME }}</div>
+        <div class="footer-note">PYTHON / SOFTWARE ENGINEERING</div>
+      </div>
+      <div class="footer-links">
+        {% for name, url in LINKS %}<a href="{{ url }}">{{ name }} ↗</a>{% endfor %}
+        <a href="mailto:mirzayevfarid@gmail.com">Email ↗</a>
+        <a href="{{ SITEURL }}/index.xml">RSS ↗</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
