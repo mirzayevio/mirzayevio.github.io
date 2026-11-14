@@ -1,9 +1,7 @@
 # Design
 
-The approved direction is a technical editorial notebook inspired by the owner's Python profiling slides.
+The homepage is a single full-viewport construction scene: warm blueprint paper, a Three.js lattice tower crane, a suspended load, and a small builder. Safety orange, sea-glass teal, graphite steel, a restrained technical grid, and concise editorial type create a miniature construction-site atmosphere. GSAP gently moves the crane trolley, load, and builder; reduced-motion users see the same scene held still. The screen has no navigation or scroll.
 
-- Pale gray-green paper, near-black ink, subdued gray and restrained signal orange.
-- Clear, compact sans-serif headings and body text; monospaced labels, dates, and code.
-- Simple horizontal rules and unframed lists; a dark flame-graph illustration is the featured talk's focal point.
-- Long-form pages use a comfortable reading measure, clear hierarchy, and generous line spacing.
-- Keyboard navigation, visible focus, contrast, responsive layouts, and reduced-motion preferences are essential.
+Existing content pages retain their technical editorial notebook styling: pale gray-green paper, near-black ink, subdued gray, restrained signal orange, compact sans-serif headings, and monospaced labels, dates, and code. Simple horizontal rules and unframed lists carry articles and pages.
+
+Keyboard access, visible focus on linked content pages, contrast, responsive layouts, and reduced-motion preferences remain essential.

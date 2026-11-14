@@ -41,16 +41,28 @@ class SiteTests(unittest.TestCase):
             "posts/1/index.html",
             "bookmarks/index.html",
             "theme/css/site.css",
+            "theme/js/construction.js",
             "theme/fonts/JetBrainsMono-Regular.woff2",
             "images/favicon.ico",
         ):
             with self.subTest(path=path):
                 self.assertTrue((OUTPUT / path).is_file())
 
-    def test_homepage_and_archived_post_are_honest(self):
+    def test_homepage_is_a_single_construction_screen_and_archived_post_is_honest(self):
         home = (OUTPUT / "index.html").read_text(encoding="utf-8")
         archived = (OUTPUT / "posts/1/index.html").read_text(encoding="utf-8")
-        self.assertIn("Profiling Python", home)
+        self.assertIn("Under", home)
+        self.assertIn("construction", home)
+        self.assertIn('id="construction-scene"', home)
+        self.assertIn("gsap.min.js", home)
+        self.assertIn("three.module.js", (OUTPUT / "theme/js/construction.js").read_text(encoding="utf-8"))
+        self.assertNotIn("construction__header", home)
+        self.assertNotIn("construction__scene-label", home)
+        self.assertNotIn("construction__footer", home)
+        self.assertNotIn("Windows XP", home)
+        self.assertNotIn("Explore my work", home)
+        self.assertNotIn("<nav", home)
+        self.assertNotIn("<a ", home)
         self.assertIn("placeholder text", archived)
         self.assertNotIn("latest.cactus.chat", home)
 

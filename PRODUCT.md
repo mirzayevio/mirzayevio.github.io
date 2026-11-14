@@ -23,7 +23,7 @@ A personal website for writing, projects, conference material, and a resume. Wri
 
 ## Brand Commitments
 
-Use the approved technical homepage direction and the visual language of the Python profiling talk.
+The homepage is a single under-construction screen with an animated Three.js crane and worker, without visible navigation. Keep existing content pages and useful URLs available.
 
 ## Evidence on Hand
 

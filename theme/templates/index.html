@@ -1,51 +1,35 @@
-{% extends "base.html" %}
-{% block content %}
-<!-- THESIS: A technical notebook that leads with real work rather than a generic portfolio.
-OWN-WORLD: Gray-green paper, dark ink, orange signals, ruled lists, and a flame graph.
-STORY: Introduce Farid, feature the profiling talk, then invite readers to explore.
-FIRST VIEWPORT: Large introduction beside a short bio, followed by the featured talk.
-FORM: User-approved industrial editorial homepage, adapted from the first preview. -->
-<section class="hero" aria-labelledby="intro">
-  <h1 id="intro">Python.<br>Under the hood.</h1>
-  <div class="hero-copy">
-    <p>I'm Farid, a Python developer.<br>This is where I share what I build, learn, and take apart.</p>
-    <a class="text-link" href="{{ SITEURL }}/projects/">Explore my work <span aria-hidden="true">↗</span></a>
-  </div>
-</section>
-<section class="featured" aria-labelledby="featured-title">
-  <div class="feature-copy">
-    <p class="metadata">Conference talk · Swiss Python Summit 2026</p>
-    <h2 id="featured-title">Profiling Python.<br>From cProfile to sampling.</h2>
-    <p>What does a profiler actually measure? A closer look at tracing, sampling, and why the difference matters.</p>
-    <a class="text-link" href="{{ SITEURL }}/projects/">Explore the talk <span aria-hidden="true">↗</span></a>
-  </div>
-  <div class="visual" role="img" aria-label="Simplified flame graph inspired by the profiling talk. The io_wait stack is highlighted in orange.">
-    <div class="visual-top"><span class="signal">STACK SAMPLES</span><span>profiling.sampling</span></div>
-    <div class="stack" aria-hidden="true">
-      <span class="stack-top">tiny_add</span>
-      <div class="stack-row"><span>many_tiny_calls</span><span>cpu_work</span><span class="hot">io_wait</span></div>
-      <span>main</span>
-    </div>
-    <div class="visual-bottom"><span>Where does time go?</span><span>PYTHON / PERFORMANCE</span></div>
-  </div>
-</section>
-<div class="lower">
-  <section aria-labelledby="writing-title">
-    <h2 class="section-title" id="writing-title">From the notebook</h2>
-    {% for article in articles[:3] %}
-    <article class="entry">
-      <p class="metadata"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></p>
-      <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} ↗</a></h3>
-      {% if article.summary %}<div class="entry-summary">{{ article.summary }}</div>{% endif %}
-    </article>
-    {% else %}
-    <div class="entry"><p>Writing is on its way. In the meantime, explore the profiling talk.</p><a class="entry-link" href="{{ SITEURL }}/projects/">Work &amp; talks ↗</a></div>
-    {% endfor %}
-  </section>
-  <section aria-labelledby="about-title">
-    <h2 class="section-title" id="about-title">A little context</h2>
-    <div class="note"><p>A Python developer with an interest in how software works—and how to understand it better.</p><a href="{{ SITEURL }}/about/">More about me ↗</a></div>
-    <div class="note"><p>This space brings together technical writing, projects, and conference material.</p><a href="{{ SITEURL }}/resume/">View resume ↗</a></div>
-  </section>
-</div>
-{% endblock %}
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Under construction | {{ SITENAME }}</title>
+  <meta name="description" content="Farid Mirzayev's website is under construction.">
+  <meta name="theme-color" content="#e9e7df">
+  <link rel="canonical" href="{{ SITEURL }}/">
+  <link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} RSS" href="{{ SITEURL }}/index.xml">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/site.css">
+  <link rel="icon" href="{{ SITEURL }}/images/favicon.ico">
+</head>
+<body class="construction-page">
+  <!--
+  THESIS: A personal website visibly being built, not a finished portfolio or a generic holding page.
+  OWN-WORLD: Warm blueprint paper, graphite steel, safety orange, sea-glass teal, and a hand-built miniature crane site.
+  STORY: Farid is building a new home on the web; the crane lifts a piece into place while a builder works nearby.
+  FIRST VIEWPORT: A large status headline anchors the left; a full-bleed animated Three.js construction diorama fills the screen.
+  FORM: Single-scene construction tableau with a gently moving crane load and worker; no navigation or scroll.
+  -->
+  <main class="construction">
+    <canvas class="construction__scene" id="construction-scene" aria-hidden="true"></canvas>
+    <div class="construction__grid" aria-hidden="true"></div>
+    <section class="construction__message" aria-labelledby="construction-title">
+      <p class="construction__eyebrow">A little work in progress</p>
+      <h1 id="construction-title">Under<br>construction<span>.</span></h1>
+      <p class="construction__copy">I’m building a new home for my work on the web. Check back soon.</p>
+    </section>
+    <p class="construction__fallback" id="construction-fallback" role="status" hidden></p>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script type="module" src="{{ SITEURL }}/theme/js/construction.js"></script>
+</body>
+</html>
